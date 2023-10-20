@@ -9,7 +9,9 @@
  */
 int handle_u(va_list arg_p)
 {
-	unsigned int u  = va_arg(arg_p, unsigned int);
+	unsigned int u;
+
+	u = va_arg(arg_p, unsigned int);
 
 	return (print_n(u, 10));
 }
@@ -23,7 +25,9 @@ int handle_u(va_list arg_p)
  */
 int handle_o(va_list arg_p)
 {
-	unsigned int o  = va_arg(arg_p, unsigned int);
+	unsigned int o;
+
+	o = va_arg(arg_p, unsigned int);
 
 	return (print_n(o, 8));
 }
@@ -37,7 +41,9 @@ int handle_o(va_list arg_p)
  */
 int handle_x(va_list arg_p)
 {
-	unsigned int x  = va_arg(arg_p, unsigned int);
+	unsigned int x;
+
+	x = va_arg(arg_p, unsigned int);
 
 	return (print_n(x, 16));
 }
@@ -51,7 +57,9 @@ int handle_x(va_list arg_p)
  */
 int handle_X(va_list arg_p)
 {
-	unsigned int X  = va_arg(arg_p, unsigned int);
+	unsigned int X;
+
+	X = va_arg(arg_p, unsigned int);
 
 	return (print_n_ca(X, 16));
 }
@@ -64,7 +72,23 @@ int handle_X(va_list arg_p)
  */
 int handle_p(va_list arg_p)
 {
-	unsigned long p  = va_arg(arg_p, unsigned long);
+	void *p;
+	char *s = "(nil)";
+	int p_int;
+	int n = 0;
 
-	return (print_n(p, 16));
+	p = va_arg(arg_p, void *);
+
+	if (p == NULL)
+	{
+		n += output_str(s);
+		return (n);
+	}
+
+	p_int = (unsigned long int)p;
+	n += output_char('0');
+	n += output_char('x');
+	n += print_n(p_int, 16);
+
+	return (n);
 }

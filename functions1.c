@@ -11,7 +11,9 @@
 
 int handle_c(va_list arg_p)
 {
-	char c = va_arg(arg_p, int);
+	char c;
+
+	c = va_arg(arg_p, int);
 
 	return (output_char(c));
 }
@@ -26,7 +28,11 @@ int handle_c(va_list arg_p)
  */
 int handle_s(va_list arg_p)
 {
-	char *s  = va_arg(arg_p, char *);
+	char *s;
+
+	s = va_arg(arg_p, char *);
+	if (s == NULL)
+		s = "(null)";
 
 	return (output_str(s));
 }
@@ -40,7 +46,9 @@ int handle_s(va_list arg_p)
  */
 int handle_d(va_list arg_p)
 {
-	int d  = va_arg(arg_p, int);
+	int d;
+
+	d = va_arg(arg_p, int);
 
 	return (print_n(d, 10));
 }
@@ -69,7 +77,9 @@ int handle_i(va_list arg_p)
  */
 int handle_b(va_list arg_p)
 {
-	int b  = va_arg(arg_p, int);
+	unsigned int b;
+
+	b = va_arg(arg_p, unsigned int);
 
 	return (print_n(b, 2));
 }

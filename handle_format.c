@@ -65,6 +65,12 @@ int handle_format(va_list arg_p, char f_spec, char flag, int width, int precisio
 		case 'p':
 			r = handle_p(arg_p);
 			break;
+		 case 'r':
+			r = handle_r(arg_p);
+			break;
+		case 'R':
+			r = handle_R(arg_p);
+			break;
 	}
 
 	return (r);

@@ -9,9 +9,9 @@
  * Return: number of bytes printed
  */
 
-int print_n(long n, int base)
+int print_n(long int n, int base)
 {
-	int count;
+	long int count;
 	char *symbols;
 
 	symbols = "0123456789abcdef";
@@ -41,9 +41,9 @@ int print_n(long n, int base)
  * Return: number of bytes printed
  */
 
-int print_n_ca(long n, int base)
+int print_n_ca(long int n, int base)
 {
-	int count;
+	long int count;
 	char *symbols;
 
 	symbols = "0123456789ABCDEF";
