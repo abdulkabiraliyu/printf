@@ -12,7 +12,7 @@
 int _printf(const char *format, ...)
 {
 	 char flag_arr[] = {'+', ' ', '#'};
-	 char for_spec_arr[] = {'c', 's', 'd', 'i', 'b', 'u', 'o', 'x', 'X', 'S', 'r', 'p', '\0'};
+	 char for_spec_arr[] = {'c', 's', 'd', 'i', 'b', 'u', 'o', 'x', 'X', 'S', 'r', 'p', 'R', '\0'};
 
 	unsigned int i, b_index = 0, write_count = 0;
 	va_list arg_p;
